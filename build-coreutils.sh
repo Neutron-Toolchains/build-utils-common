@@ -29,6 +29,7 @@ cd $COREUTILS_BUILD
 	LDFLAGS="-Wl,-O3,--sort-common,--as-needed,-z,now" \
 	--enable-threads=isoc+posix \
 	--enable-single-binary=symlinks \
+	--disable-gcc-warnings \
 	--with-openssl
 
 make -j$(($(nproc --all) + 2))

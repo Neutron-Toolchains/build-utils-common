@@ -1,0 +1,50 @@
+name: Project-Builds
+
+on:
+  push:
+  schedule:
+    - cron: '0 0 * * 0,4'
+
+env:
+  GITHUB_USERNAME: dakkshesh07
+  GITHUB_EMAIL: dakkshesh5@gmail.com
+  GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+
+jobs:
+  build-coreutils:
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/neutron-toolchains/docker-image:arch-neutron
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Configuring git
+      run: |
+        git config --global user.name $GITHUB_USERNAME
+        git config --global user.email $GITHUB_EMAIL
+    - name: Set TimeZone
+      run: |
+        ln -sf /usr/share/zoneinfo/Asia/Kolkata /etc/localtime
+    - name: Build & Push
+      run: |
+        chmod a+x build-*.sh
+        bash build-coreutils.sh
+
+  build-gzip:
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/neutron-toolchains/docker-image:arch-neutron
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Configuring git
+      run: |
+        git config --global user.name $GITHUB_USERNAME
+        git config --global user.email $GITHUB_EMAIL
+    - name: Set TimeZone
+      run: |
+        ln -sf /usr/share/zoneinfo/Asia/Kolkata /etc/localtime
+    - name: Build & Push
+      run: |
+        chmod a+x build-*.sh
+        bash build-gzip.sh

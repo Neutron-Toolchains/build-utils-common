@@ -1,0 +1,9 @@
+# Ignore stuffs used for build
+gzip/
+coreutils/
+gzip-build/
+coreutils-build/
+
+# Ignore final install dir as well
+gzip-install/
+coreutils-install

@@ -22,6 +22,7 @@ cd $GZIP_BUILD
 "$GZIP_DIR"/configure \
   --prefix="$INSTALL_DIR" \
   --enable-threads=isoc+posix \
+  --disable-gcc-warnings \
 	CC="gcc" \
 	CFLAGS="-march=x86-64 -mtune=generic -flto=auto -flto-compression-level=10 -O3 -pipe -ffunction-sections -fdata-sections" \
 	LDFLAGS="-Wl,-O3,--sort-common,--as-needed,-z,now"

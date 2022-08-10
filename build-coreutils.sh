@@ -9,6 +9,8 @@ COREUTILS_DIR="$BUILD_DIR/coreutils"
 INSTALL_DIR="$BUILD_DIR/coreutils-install"
 COREUTILS_BUILD="$BUILD_DIR/coreutils-build"
 
+export FORCE_UNSAFE_CONFIGURE=1
+
 cd $BUILD_DIR
 rm -rf $COREUTILS_BUILD
 mkdir -p $COREUTILS_BUILD

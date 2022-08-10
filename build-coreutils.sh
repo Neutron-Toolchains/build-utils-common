@@ -29,9 +29,7 @@ cd $COREUTILS_BUILD
 	LDFLAGS="-Wl,-O3,--sort-common,--as-needed,-z,now" \
 	--enable-threads=isoc+posix \
 	--enable-single-binary=symlinks \
-	--with-openssl \
-	--enable-single-binary-exceptions=groups,hostname,kill,uptime \
-	--enable-no-install-program=groups,hostname,kill,uptime
+	--with-openssl
 
 make -j$(($(nproc --all) + 2))
 make install-strip -j$(($(nproc --all) + 2))

@@ -3,7 +3,7 @@ name: Project-Builds
 on:
   push:
   schedule:
-    - cron: '0 0 * * 0,4'
+    - cron: "00 02 * * 6"
 
 env:
   GITHUB_USERNAME: dakkshesh07

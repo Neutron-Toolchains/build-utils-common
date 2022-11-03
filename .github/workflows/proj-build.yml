@@ -14,7 +14,7 @@ jobs:
   build-coreutils:
     runs-on: ubuntu-latest
     container:
-      image: ghcr.io/neutron-toolchains/docker-image:arch-neutron
+      image: ghcr.io/neutron-projects/docker-image:arch-neutron
 
     steps:
     - uses: actions/checkout@v3
@@ -33,7 +33,7 @@ jobs:
   build-gzip:
     runs-on: ubuntu-latest
     container:
-      image: ghcr.io/neutron-toolchains/docker-image:arch-neutron
+      image: ghcr.io/neutron-projects/docker-image:arch-neutron
 
     steps:
     - uses: actions/checkout@v3

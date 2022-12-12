@@ -6,13 +6,13 @@ on:
     - cron: "00 02 * * 6"
 
 env:
-  GITHUB_USERNAME: dakkshesh07
+  GITHUB_USERNAME: Dakkshesh
   GITHUB_EMAIL: dakkshesh5@gmail.com
   GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
 
 jobs:
   build-coreutils:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     container:
       image: ghcr.io/neutron-projects/docker-image:arch-neutron
 
